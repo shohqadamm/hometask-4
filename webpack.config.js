@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: "development",
-    entry: path.resolve(__dirname, "..", "./src/index.tsx"),
+    entry: path.resolve(__dirname, "./src/index.tsx"),
+    devtool: "source-map",
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
     },
@@ -29,12 +30,12 @@ module.exports = {
         ],
     },
     output: {
-        path: path.resolve(__dirname, "..", "./dist"),
+        path: path.resolve(__dirname, "./dist"),
         filename: "bundle.js",
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "..", "./src/index.html"),
+            template: path.resolve(__dirname, "./src/index.html"),
         }),
     ],
     stats: "errors-only",
